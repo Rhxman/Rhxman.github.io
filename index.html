@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canelo Alvarez - The King of Boxing</title>
+    <!-- link custom css -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>CANELO ÁLVAREZ</h1>
+            <img src="images.jpg" alt="Canelo Alvarez">
+
+            <p class="subtitle">The Undisputed Super Middleweight Champion</p>
+            <a href="#stats" class="cta-button">Lihat Statistik</a>
+        </div>
+        <div class="scroll-indicator">
+            <div style="color: white; font-size: 2rem;">↓</div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Statistik Karir</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">60</div>
+                    <div class="stat-label">Total Pertandingan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">58</div>
+                    <div class="stat-label">Kemenangan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">39</div>
+                    <div class="stat-label">Knockout</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Kekalahan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <img src="images.jpg" alt="Canelo Alvarez">
+                    <h2>Tentang Canelo</h2>
+                    <p>Santos Saúl Álvarez Barragán, yang dikenal sebagai Canelo Álvarez, adalah petinju profesional asal Meksiko yang dianggap sebagai salah satu petinju terbaik di dunia saat ini.</p>
+                    <p>Lahir pada 18 Juli 1990 di Guadalajara, Jalisco, Canelo telah memenangkan berbagai gelar juara dunia di empat kelas berat yang berbeda, dari light middleweight hingga light heavyweight.</p>
+                    <p>Dikenal dengan gaya bertarung yang agresif dan kemampuan counter-punch yang luar biasa, Canelo telah mengalahkan banyak nama besar dalam dunia tinju profesional.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder untuk gambar Canelo -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <div class="container">
+            <h2>Pencapaian Utama</h2>
+            <div class="achievement-list">
+                <div class="achievement-item">
+                    <h3>🏆 Undisputed Super Middleweight Champion</h3>
+                    <p>Juara dunia tak terbantahkan di kelas super middleweight dengan memegang semua sabuk utama (WBA, WBC, IBF, WBO).</p>
+                </div>
+                <div class="achievement-item">
+                    <h3>🥊 Multiple Weight Class Champion</h3>
+                    <p>Pemenang gelar juara dunia di empat kelas berat berbeda: light middleweight, middleweight, super middleweight, dan light heavyweight.</p>
+                </div>
+                <div class="achievement-item">
+                    <h3>💰 Highest-Paid Boxer</h3>
+                    <p>Salah satu petinju dengan bayaran tertinggi di dunia dengan kontrak eksklusif DAZN senilai $365 juta.</p>
+                </div>
+                <div class="achievement-item">
+                    <h3>🇲🇽 Mexican Boxing Icon</h3>
+                    <p>Ikon tinju Meksiko yang melanjutkan tradisi petinju-petinju legendaris dari negaranya.</p>
+                </div>
+                <div class="achievement-item">
+                    <h3>📊 Pound-for-Pound King</h3>
+                    <p>Secara konsisten masuk dalam daftar petinju terbaik pound-for-pound di berbagai organisasi tinju dunia.</p>
+                </div>
+                <div class="achievement-item">
+                    <h3>🎯 Precision Puncher</h3>
+                    <p>Dikenal dengan akurasi pukulan yang tinggi dan kemampuan body shot yang mematikan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3>Ikuti Perjalanan Canelo</h3>
+            <div class="social-links">
+                <a href="https://www.instagram.com/canelo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" title="Instagram">📷</a>
+                <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="YouTube">📺</a>
+            </div>
+            <p>&copy; 2025 Canelo Álvarez Fan Page. Semua hak dilindungi.</p>
+            <p style="margin-top: 10px; opacity: 0.7;">Dibuat oleh rahman untuk para penggemar tinju</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate stats cards on scroll
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+
+        // Add typing effect to hero title
+        const heroTitle = document.querySelector('.hero h1');
+        const titleText = heroTitle.textContent;
+        heroTitle.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < titleText.length) {
+                heroTitle.textContent += titleText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        
+        setTimeout(typeWriter, 1000);
+    </script>
+</body>
+</html>
